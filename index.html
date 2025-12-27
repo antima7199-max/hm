@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Happy Birthday Aadi ❤️</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&family=Great+Vibes&display=swap" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    overflow:hidden;
+}
+
+.page{
+    width:100vw;
+    height:100vh;
+    display:none;
+    align-items:center;
+    justify-content:center;
+    flex-direction:column;
+    text-align:center;
+    color:white;
+    animation: fadeIn 1.5s ease;
+}
+
+.page.active{
+    display:flex;
+}
+
+h1{
+    font-family:'Great Vibes',cursive;
+    font-size:60px;
+    animation: pop 1.5s ease;
+}
+
+p{
+    font-size:18px;
+    margin-top:15px;
+    max-width:700px;
+    animation: slideUp 1.5s ease;
+}
+
+/* Buttons */
+button{
+    margin-top:30px;
+    padding:12px 30px;
+    border:none;
+    border-radius:30px;
+    font-size:18px;
+    background:linear-gradient(45deg,#ff4d6d,#ff8fa3);
+    color:white;
+    cursor:pointer;
+    animation: pop 1.2s infinite alternate;
+}
+
+/* Backgrounds */
+#page1{background:linear-gradient(135deg,#ff4d6d,#ffb3c6);}
+#page2{background:linear-gradient(135deg,#6a11cb,#2575fc);}
+#page3{background:linear-gradient(135deg,#ff758f,#ff7eb3);}
+#page4{background:linear-gradient(135deg,#43cea2,#185a9d);}
+#page5{background:linear-gradient(135deg,#ff512f,#dd2476);}
+
+/* Hearts */
+.heart{
+    position:absolute;
+    color:rgba(255,255,255,0.7);
+    font-size:20px;
+    animation: float 8s linear infinite;
+}
+
+@keyframes float{
+    0%{transform:translateY(100vh);opacity:0;}
+    20%{opacity:1;}
+    100%{transform:translateY(-10vh);opacity:0;}
+}
+
+@keyframes pop{
+    from{transform:scale(0.9);}
+    to{transform:scale(1.1);}
+}
+
+@keyframes slideUp{
+    from{transform:translateY(40px);opacity:0;}
+    to{transform:translateY(0);opacity:1;}
+}
+
+@keyframes fadeIn{
+    from{opacity:0;}
+    to{opacity:1;}
+}
+
+/* Surprise box */
+.box{
+    width:150px;
+    height:150px;
+    background:#fff;
+    border-radius:15px;
+    animation: shake 1s infinite;
+    cursor:pointer;
+}
+
+@keyframes shake{
+    0%{transform:rotate(0deg);}
+    25%{transform:rotate(2deg);}
+    50%{transform:rotate(-2deg);}
+    75%{transform:rotate(2deg);}
+    100%{transform:rotate(0deg);}
+}
+
+.hidden{
+    display:none;
+}
+
+/* Puzzle */
+.puzzle span{
+    display:inline-block;
+    padding:15px;
+    margin:5px;
+    background:white;
+    color:#ff4d6d;
+    border-radius:10px;
+    cursor:pointer;
+    font-weight:bold;
+}
+</style>
+</head>
+
+<body>
+
+<!-- PAGE 1 -->
+<div class="page active" id="page1">
+    <h1>Happy Birthday Aadi 🎂❤️</h1>
+    <p>
+        Aaj sirf tumhara din nahi hai,<br>
+        Aaj meri duniya ka sabse khoobsurat pal hai.<br>
+        Tum muskurate ho toh meri rooh khil jaati hai 💖
+    </p>
+    <button onclick="nextPage()">Next 💕</button>
+</div>
+
+<!-- PAGE 2 -->
+<div class="page" id="page2">
+    <h1>For My Special Aadi 💫</h1>
+    <video width="320" controls autoplay loop style="border-radius:20px;box-shadow:0 10px 30px rgba(0,0,0,0.4)">
+        <source src="aadi.jpg.mp4" type="video/mp4">
+    </video>
+    <p>
+        Tum meri har dua ka jawaab ho,<br>
+        Tumhari ek muskaan meri sabse badi khushi hai 💕
+    </p>
+    <button onclick="nextPage()">Next 💖</button>
+</div>
+
+<!-- PAGE 3 -->
+<div class="page" id="page3">
+    <h1>Love Puzzle 🧩</h1>
+    <p>Tap the words in correct order to form the magic line 💘</p>
+
+    <div class="puzzle" onclick="solvePuzzle()">
+        <span>You</span>
+        <span>My</span>
+        <span>Love</span>
+        <span>Are</span>
+    </div>
+
+    <p id="puzzleText" class="hidden">
+        💞 You Are My Love 💞<br>
+        Bilkul tumhari tarah – perfect 💗
+    </p>
+
+    <button onclick="nextPage()">Next ❤️</button>
+</div>
+
+<!-- PAGE 4 -->
+<div class="page" id="page4">
+    <h1>Only For You 🌹</h1>
+    <p>
+        Tum saath ho toh har din ek tyohar lagta hai,<br>
+        Tumhara naam hi meri har khushi likhta hai.<br>
+        Aadi, tum meri kahani ka sabse khoobsurat hissa ho ❤️
+    </p>
+    <button onclick="nextPage()">Next 🎁</button>
+</div>
+
+<!-- PAGE 5 -->
+<div class="page" id="page5">
+    <h1>Surprise For You 🎁</h1>
+    <div class="box" onclick="openSurprise()"></div>
+
+    <div id="surprise" class="hidden">
+        <h1>I Love You So Much Aadi 💖</h1>
+        <p>
+            Tum sirf mere pyaar nahi ho,<br>
+            Tum meri rooh ho, meri zindagi ho ❤️<br><br>
+            Happy Birthday My True Love 🎂💫<br>
+            Hamesha mere saath rehna 💞
+        </p>
+    </div>
+</div>
+
+<script>
+let current = 0;
+const pages = document.querySelectorAll('.page');
+
+function nextPage(){
+    pages[current].classList.remove('active');
+    current++;
+    pages[current].classList.add('active');
+}
+
+function solvePuzzle(){
+    document.getElementById('puzzleText').classList.remove('hidden');
+}
+
+function openSurprise(){
+    document.querySelector('.box').classList.add('hidden');
+    document.getElementById('surprise').classList.remove('hidden');
+}
+
+/* Hearts */
+for(let i=0;i<40;i++){
+    let heart=document.createElement('div');
+    heart.className='heart';
+    heart.innerHTML='❤';
+    heart.style.left=Math.random()*100+'vw';
+    heart.style.animationDuration=(Math.random()*5+5)+'s';
+    document.body.appendChild(heart);
+}
+</script>
+
+</body>
+</html>
